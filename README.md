@@ -1,6 +1,14 @@
-# CarND-Path-Planning-Project
-Self-Driving Car Engineer Nanodegree Program
-   
+# A submission to Bosch path planning sponsored by Udacity 
+
+This codebase contains a path planning algorithm for an autonomous vehicle working with a randomized road traffic simulator. The algorithm 
+prioritizes smooth motion with the least amount of jerk using higher-order polynomial curve fitting. The path planner searches for the 
+best smooth paths among an multi-dimensional space of variables: the current speed and acceleration, the final speed and acceleration, 
+the estimated position of the vehicle, and the viability of a path based on obstacles. The solutions are sorted using hand-coded 
+heuristics to optimize for fatest speed down a road without compromising safety contraints. 
+
+The code is written in C++ using linear solver libraries. The Udacity simulator is an external dependency that must be downloaded and 
+instaled.
+    
 ### Simulator. You can download the Term3 Simulator BETA which contains the Path Planning Project from the [releases tab](https://github.com/udacity/self-driving-car-sim/releases).
 
 In this project your goal is to safely navigate around a virtual highway with other traffic that is driving +-10 MPH of the 50 MPH speed limit. You will be provided the car's localization and sensor fusion data, there is also a sparse map list of waypoints around the highway. The car should try to go as close as possible to the 50 MPH speed limit, which means passing slower traffic when possible, note that other cars will try to change lanes too. The car should avoid hitting other cars at all cost as well as driving inside of the marked road lanes at all times, unless going from one lane to another. The car should be able to make one complete loop around the 6946m highway. Since the car is trying to go 50 MPH, it should take a little over 5 minutes to complete 1 loop. Also the car should not experience total acceleration over 10 m/s^2 and jerk that is greater than 50 m/s^3.
